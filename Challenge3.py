@@ -1,14 +1,3 @@
-class Player:
-    
-    new_team = []
-
-    def __init__(self,players):
-        self.name = players['name']
-        self.age = players['age']
-        self.position = players['position']
-        self.team = players['team']
-        Player.new_team.append(players)
-
 players = [
     {
     	"name": "Kevin Durant", 
@@ -45,6 +34,28 @@ players = [
     }
 ]
 
-New_team =  Player(players)
 
-print(Player.new_team)
+new_team=[]
+class Player:
+    def __init__(self, name, age, position, team):
+        self.name = name
+        self.age = age
+        self.position = position
+        self.team = team
+
+# Attempt of Ninja Bonus
+    # @classmethod
+    # def get_team(cls,players):
+    #     new_team2 = []
+    #     for i in players:
+    #         new_team2.append(players)
+    #     return new_team
+# Player.get_team(players)
+
+for i in players:
+	test = Player(i['name'],i['age'],i['position'],i['team'])
+	new_team.append(test)
+
+for i in new_team:
+    testing = [i.name, i.age, i.position,i.team]
+    print(testing)
